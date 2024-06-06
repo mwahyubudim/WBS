@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>勤怠管理システム WBS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="top">
+            <div class="title-container">
+                <h1>勤怠管理システム WBS</h1>
+            </div>
+            <div class="close-container">
+                <button id="backButton" class="action-button back">ホーム</button>
+                <button id="closeButton" class="action-button close">ログアウト</button>
+            </div>
+        </div>
+        <div class="header">
+            <div class="search-container">
+                <input type="text" id="searchEmployeeId" placeholder="社員 ID">
+                <input type="text" id="searchDepartment" placeholder="所属">
+                <input type="date" id="searchStartDate" placeholder="開始日">
+                
+                <input type="date" id="searchEndDate" placeholder="終了日">
+                <button id="searchButton">検索</button>
+            </div>
+            <div class="action-container">
+                <button id="addButton" class="action-button add">追加</button>
+                <button id="deleteButton" class="action-button delete">削除</button>
+            </div>
+        </div>
+        <div class="employee-list">
+            <table id="employeeTable">
+                <thead>
+                    <tr>
+                        <th>選択</th>
+                        <th>社員ID</th>
+                        <th>入社年月日</th>
+                        <th>氏名</th>
+                        <th>性別</th>
+                        <th>年齢</th>
+                        <th>所属</th>
+                        <th>メールアドレス</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Employee rows will be added here dynamically -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="indexlist.js"></script>
+    <script src="indexsearch.js"></script>
+    <script src="indexadd.js"></script>
+    <script src="indexdelete.js"></script>
+</body>
+</html>

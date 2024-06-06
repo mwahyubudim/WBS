@@ -1,0 +1,147 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0; /* Light gray background */
+}
+
+.container {
+    max-width: 1200px; /* Set maximum width for content */
+    margin: 0 auto; /* Center content horizontally */
+    padding: 20px;
+}
+
+.top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.title-container {
+    text-align: center;
+    flex: 1;
+}
+
+.close-container {
+    margin-right: 20px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.search-container input[type="text"],
+.search-container input[type="date"] {
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #000;
+    border-radius: 5px;
+    margin-right: 10px;
+    background-color: #fff;
+}
+
+.search-container input[type="text"]::placeholder,
+.search-container input[type="date"]::placeholder {
+    color: #999;
+}
+
+.search-container button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #666;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Different colors for action buttons */
+.action-container {
+    display: flex;
+    gap: 10px;
+}
+
+.back {
+    background-color: orange; /* Orange */
+}
+
+.close {
+    background-color: #8a2be2; /* Violet */
+}
+
+.add {
+    background-color: #4CAF50; /* Green */
+}
+
+.delete {
+    background-color: #f44336; /* Red */
+}
+
+.search {
+    background-color: #808080; /* Gray */
+}
+
+.action-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.employee-list {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+/* Reduce padding and font size for table cells */
+td, th {
+    padding: 5px;
+    font-size: 14px;
+}
+
+/* Optional: Increase padding for header cells */
+th {
+    padding: 8px;
+}
+
+
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .title-container {
+        text-align: center;
+        flex: 1;
+    }
+
+    .search-container {
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+
+    .search-container input[type="text"],
+    .search-container input[type="date"],
+    .search-container button,
+    .action-button {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}
