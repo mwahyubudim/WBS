@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class WbsController {
 
-    @GetMapping("/")
+    @GetMapping("/index")
     public String index() {
         return "index"; // This corresponds to src/main/resources/templates/index.html
     }
