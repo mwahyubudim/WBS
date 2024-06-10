@@ -31,3 +31,13 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 });
+
+// Add event listener for backButton
+document.getElementById('backButton').addEventListener('click', function() {
+    window.location.href = 'index.html';
+});
+
+// Add event listener for backButton
+document.getElementById('closeButton').addEventListener('click', function() {
+    window.location.href = 'logout.html';
+});
