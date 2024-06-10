@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 06, 2024 at 01:59 AM
+-- Generation Time: Jun 10, 2024 at 04:09 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -24,17 +24,59 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `job`
+--
+
+CREATE TABLE `job` (
+  `job_id` varchar(10) NOT NULL,
+  `job_desc` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `job`
+--
+
+INSERT INTO `job` (`job_id`, `job_desc`) VALUES
+('job01', '営業部'),
+('job02', '開発部'),
+('job03', '人事部'),
+('job04', '経理部'),
+('job05', '総務部'),
+('job06', '企画部'),
+('job07', '広報部'),
+('job08', '法務部'),
+('job09', '営業部'),
+('job10', '開発部');
+
+--
+-- Triggers `job`
+--
+DELIMITER $$
+CREATE TRIGGER `job_id_auto_increment` BEFORE INSERT ON `job` FOR EACH ROW BEGIN
+    DECLARE max_id INT;
+    DECLARE new_id VARCHAR(10);
+
+    SELECT COALESCE(MAX(CAST(SUBSTRING(job_id, 4) AS UNSIGNED)), 0) INTO max_id FROM job;
+    SET new_id = CONCAT('job', LPAD(max_id + 1, 2, '0'));
+    SET NEW.job_id = new_id;
+END
+$$
+DELIMITER ;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `kaishain`
 --
 
 CREATE TABLE `kaishain` (
-  `id` varchar(10) NOT NULL,
-  `joindate` char(8) NOT NULL,
-  `name` varchar(20) NOT NULL,
-  `sex` varchar(3) NOT NULL,
+  `id` varchar(255) NOT NULL,
+  `joindate` varchar(255) DEFAULT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `sex` varchar(255) DEFAULT NULL,
   `age` int(3) NOT NULL,
-  `job` varchar(10) NOT NULL,
-  `email` varchar(50) NOT NULL
+  `job` varchar(255) DEFAULT NULL,
+  `email` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -56,6 +98,12 @@ INSERT INTO `kaishain` (`id`, `joindate`, `name`, `sex`, `age`, `job`, `email`) 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `job`
+--
+ALTER TABLE `job`
+  ADD PRIMARY KEY (`job_id`);
 
 --
 -- Indexes for table `kaishain`
