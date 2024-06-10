@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ログアウト</title>
+    <link rel="stylesheet" href="logout.css">
+</head>
+<body>
+    <div class="container">
+        <div class="message-container">
+            <h1>ログアウトしました</h1>
+            <p>ご利用ありがとうございました。またのご利用をお待ちしております。</p>
+            <button id="loginButton" class="action-button login">ログインページへ</button>
+        </div>
+    </div>
+    <script>
+        // Add event listener for loginButton
+        document.getElementById('loginButton').addEventListener('click', function() {
+            window.location.href = 'login.html';
+        });
+    </script>
+</body>
+</html>
