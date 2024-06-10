@@ -20,9 +20,20 @@
         <div class="header">
             <div class="search-container">
                 <input type="text" id="searchEmployeeId" placeholder="社員 ID">
-                <input type="text" id="searchDepartment" placeholder="所属">
-                <input type="date" id="searchStartDate" placeholder="開始日">
                 
+                <select id="searchDepartment">
+                    <option value="">所属</option>
+                    <option value="営業部">営業部</option>
+                    <option value="開発部">開発部</option>
+                    <option value="人事部">人事部</option>
+                    <option value="経理部">経理部</option>
+                    <option value="総務部">総務部</option>
+                    <option value="企画部">企画部</option>
+                    <option value="広報部">広報部</option>
+                    <option value="法務部">法務部</option>
+                </select>
+                
+                <input type="date" id="searchStartDate" placeholder="開始日">
                 <input type="date" id="searchEndDate" placeholder="終了日">
                 <button id="searchButton">検索</button>
             </div>
